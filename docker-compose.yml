@@ -1,0 +1,45 @@
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    restart: always
+    ports:
+      - 2345:5432
+    env_file:
+      - ./spotsat_back/.env
+    volumes:
+      - postgres-volume:/var/lib/postgres/data
+
+  node:
+    image: spotsat_back
+    build: ./spotsat_back
+    restart: always
+    ports:
+      - 4000:4000
+    depends_on:
+      - postgres  
+    env_file:
+      - ./spotsat_back/.env
+
+  react:
+    container_name: react
+    build: ./spotsat_front
+    volumes:
+      - react-volume:/var/www/html
+  
+  nginx:
+    container_name: nginx_app
+    build: ./nginx
+    restart: always
+    ports:
+      - 8080:80
+    volumes:
+      - react-volume:/var/www/html
+    depends_on:
+      - postgres
+      - node
+      - react
+
+volumes:
+  postgres-volume:
+  react-volume:
