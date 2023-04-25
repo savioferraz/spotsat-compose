@@ -16,7 +16,7 @@ jobs:
           POSTGRES_HOST: postgres
           POSTGRES_PORT: 5432
           POSTGRES_DATABASE: spotsat_test
-          DATABASE_URL: postgresql://postgres:1234@$postgres:5432/spotsat_test?schema=public
+          DATABASE_URL: postgresql://postgres:1234@postgres:5432/spotsat_test?schema=public
           directory: spotsat_back/
           file_name: .env.test
 
