@@ -13,10 +13,10 @@ jobs:
           PORT: 4000
           POSTGRES_USERNAME: postgres
           POSTGRES_PASSWORD: 1234
-          POSTGRES_HOST: localhost
+          POSTGRES_HOST: postgres
           POSTGRES_PORT: 5432
           POSTGRES_DATABASE: spotsat_test
-          DATABASE_URL: postgresql://postgres:1234@$localhost:5432/spotsat_test?schema=public
+          DATABASE_URL: postgresql://postgres:1234@$postgres:5432/spotsat_test?schema=public
           directory: spotsat_back/
           file_name: .env.test
 
