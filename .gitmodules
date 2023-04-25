@@ -1,0 +1,6 @@
+[submodule "spotsat_back"]
+	path = spotsat_back
+	url = https://github.com/savioferraz/spotsat_back
+[submodule "spotsat_front"]
+	path = spotsat_front
+	url = https://github.com/savioferraz/spotsat_front
