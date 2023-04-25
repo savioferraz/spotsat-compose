@@ -20,5 +20,8 @@ jobs:
           directory: spotsat_back/
           file_name: .env.test
 
+      - name: List contents of spotsat_back directory
+        run: ls -la spotsat_back
+
       - name: Run tests
         run: docker compose -f docker-compose-test.yml run node npm run test
