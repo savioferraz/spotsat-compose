@@ -17,8 +17,8 @@ jobs:
           POSTGRES_PORT: 5432
           POSTGRES_DATABASE: spotsat_test
           DATABASE_URL: postgresql://postgres:1234@$localhost:5432/spotsat_test?schema=public
-          directory: spotsat_back/
-          filename: .env.test
+        directory: spotsat_back/
+        file_name: .env.test
 
       - name: Run tests
         run: docker compose -f docker-compose-test.yml run node npm run test
