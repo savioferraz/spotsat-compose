@@ -1,0 +1,24 @@
+name: CI validation
+on: [push, pull_request]
+jobs:
+  Validation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v2
+
+      - name: Create a new envfile
+        uses: SpicyPizza/create-envfile@v1.3
+        with:
+          PORT: 4000
+          POSTGRES_USERNAME: postgres
+          POSTGRES_PASSWORD: 1234
+          POSTGRES_HOST: localhost
+          POSTGRES_PORT: 5432
+          POSTGRES_DATABASE: spotsat
+          DATABASE_URL: postgresql://${POSTGRES_USERNAME}:${POSTGRES_PASSWORD}@${POSTGRES_HOST}:${POSTGRES_PORT}/${POSTGRES_DATABASE}?schema=public
+          directory: spotsat_back
+          filename: .env.test
+
+      - name: Run tests
+        run: docker compose -f docker-compose-test.yml run node npm run test
