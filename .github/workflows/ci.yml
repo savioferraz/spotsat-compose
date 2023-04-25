@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-          submodules: 'recursive'
+          submodules: recursive
 
       - name: Create a new envfile
         uses: SpicyPizza/create-envfile@v1.3
