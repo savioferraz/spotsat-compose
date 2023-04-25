@@ -11,8 +11,8 @@ services:
   node:
     image: spotsat_back
     build:
-      context: .
-      dockerfile: ./spotsat_back/Dockerfile
+      context: ./spotsat_back
+      dockerfile: Dockerfile
     restart: always
     ports:
       - 4000:4000
