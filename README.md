@@ -1,10 +1,11 @@
-# Spotsat Docker-Compose
+# SpotSat Docker-Compose
 
-Docker-compose da aplicação SpotSat, contendo os repositórios do Front e Back end como submódulos.
+Docker-compose da aplicação Full-Stack SpotSat. <br>
+Para mais informações sobre os Submódulos individuais, visite seus respectivos repositórios do [Front-end] e [Back-end]
 
 ## Instalação
 
-Para instalar esse Docker-compose, clone esse repositório e rode os seguintes comandos para instalar os submódulos:
+Para instalar esse Docker-compose, clone esse repositório e rode os seguintes comandos para instalar os submódulos da aplicação:
 
 ```sh
 git submodule init
@@ -31,3 +32,6 @@ A aplicação ficará disponível na porta:
 ```sh
 http://localhost:8080/
 ```
+
+[Front-end]: <https://github.com/savioferraz/spotsat_front>
+[Back-end]: <https://github.com/savioferraz/spotsat_back>
