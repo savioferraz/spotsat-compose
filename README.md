@@ -4,7 +4,15 @@ Docker-compose da aplicação SpotSat
 
 ## Instalação
 
-Para instalar esse Docker-compose, certifique-se de que tenha os códigos fonte do front e back end no mesmo diretório do compose. Execute o comandos para gerar as imagens dos containers:
+Para instalar esse Docker-compose, clone esse repositório e rode os seguintes comandos:
+
+```sh
+git submodule init
+git submodule update
+```
+
+Certifique-se de que os diretórios do front e back end estão no mesmo diretório do compose.
+Execute o comandos para gerar as imagens dos containers:
 
 ```sh
 docker compose build
